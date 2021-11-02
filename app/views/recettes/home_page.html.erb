@@ -1,0 +1,10 @@
+<h1 style="text-align: center;"> Recettes </h1>
+<br /><br /><br />
+<% @recettes.each do |recette| %>
+  <h2>
+    &emsp;&emsp;&emsp;&emsp;&emsp; 
+    <a href="/recettes/<%= recette.id %>"><i><%= recette.titre %></i><br /></a>
+    
+  </h2>
+  
+<% end %>
