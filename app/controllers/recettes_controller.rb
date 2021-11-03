@@ -8,7 +8,13 @@ class RecettesController < ApplicationController
     end
 
     def show
-
+        respond_to do |format|
+            #format.html { render :html => @patient.to_s}
+            #format.html { render 'patients/show'}
+            format.html
+            format.json { render :json => @recetteById.ingredients.to_json}
+            format.xml { render :xml => @recetteById.ingredients.as_json}
+         end
     end
 
     private

@@ -5,9 +5,9 @@ Rails.application.routes.draw do
     
   get '/recettes/:id', to: 'recettes#show'
 
-  get '/admin/:is_admin', to: 'admin#is_admin?'
+  get '/admin/recettes/:id', to: 'admin#show'
 
-  get '/admin/recettes', to: 'admin#show'
+  get '/admin/recettes', to: 'admin#home_page'
 
 
 end

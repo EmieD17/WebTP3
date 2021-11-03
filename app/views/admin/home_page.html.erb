@@ -1,0 +1,19 @@
+<h1 style="text-align: center;"> Recettes </h1>
+<br /><br /><br />
+<% @users.each do |user| %>
+  <% unless user.recettes.length == 0 %>
+    <ul>
+      <li>
+        <b><%=user.nom%>  <%=user.prenom%></b>
+      </li>
+      <ol>
+        <% user.recettes.each do |recette| %>
+          &emsp; 
+          <li>
+             <a href="/admin/recettes/<%= recette.id %>"><i><%= recette.titre %></i></a>
+          </li> 
+        <% end %>
+      </ol>
+    </ul>
+  <%end %>
+<% end %>
