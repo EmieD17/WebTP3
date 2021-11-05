@@ -14,15 +14,15 @@ class AdminController < ApplicationController
     #  end
     #end
 
-    before_action :get_users, only: [:home_page]
-    before_action :get_recipe_by_id, only: [:show]
+
 
     def home_page
-        
+        get_users
     end
 
+    
     def show
-        
+        get_recipe_by_id
     end 
     private
     def get_users

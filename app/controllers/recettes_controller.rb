@@ -5,15 +5,13 @@
 
 class RecettesController < ApplicationController
 
-    before_action :get_recipes, only: [:home_page]
-    before_action :get_recipe_by_id, only: [:show]
-
     def home_page
-        
+        get_recipes
     end
 
+    
     def show
-        
+        get_recipe_by_id
     end
 
     private
