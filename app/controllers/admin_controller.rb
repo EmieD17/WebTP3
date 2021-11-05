@@ -1,3 +1,8 @@
+#  Émie Doucet
+#  Web: Serveur 2
+#  Laboratoire 3
+#  03/11/2021
+
 class AdminController < ApplicationController
     #before_action :is_admin?
   
@@ -17,11 +22,7 @@ class AdminController < ApplicationController
     end
 
     def show
-        respond_to do |format|
-            format.html
-            format.json { render :json => @recetteById.ingredients.to_json}
-            format.xml { render :xml => @recetteById.ingredients.as_json}
-        end
+        
     end 
     private
     def get_users

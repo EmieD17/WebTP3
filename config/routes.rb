@@ -1,3 +1,8 @@
+#  Émie Doucet
+#  Web: Serveur 2
+#  Laboratoire 3
+#  03/11/2021
+
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 

@@ -1,3 +1,8 @@
+#  Émie Doucet
+#  Web: Serveur 2
+#  Laboratoire 3
+#  03/11/2021
+
 class RecettesController < ApplicationController
 
     before_action :get_recipes, only: [:home_page]
@@ -8,13 +13,7 @@ class RecettesController < ApplicationController
     end
 
     def show
-        respond_to do |format|
-            #format.html { render :html => @patient.to_s}
-            #format.html { render 'patients/show'}
-            format.html
-            format.json { render :json => @recetteById.ingredients.to_json}
-            format.xml { render :xml => @recetteById.ingredients.as_json}
-         end
+        
     end
 
     private
@@ -25,7 +24,4 @@ class RecettesController < ApplicationController
     def get_recipe_by_id
         @recetteById = Recette.find(params[:id])
     end
-
-
-
 end

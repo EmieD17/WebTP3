@@ -1,0 +1,7 @@
+<ingredients>
+  <% for i in 0..@recetteById.ingredients.length-1 %>
+    <ingredient>
+      <%= @recetteById.ingredients[i].nom%>
+    </ingredient>
+  <% end %>
+</ingredients>

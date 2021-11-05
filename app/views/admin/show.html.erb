@@ -1,18 +1,17 @@
 <h1 style="text-align: center;"> Recettes </h1>
 <br /><br /><br />
-<h2>Recette <%= @recetteById.id %> :&emsp; <%= @recetteById.titre %>
-<!--
+<h2>Recette <%= @recetteById.id %> :&emsp;<%= @recetteById.titre %>
 </br> </h2>
+&emsp; Par    <%= @recetteById.user.nom %>  <%= @recetteById.user.prenom %>
 <ul>
-  <% for i in 0..@recetteById.ingredients.length-1 %>
-    <li>
-      <%=@recetteById.recette_ingredients[i].quantite%> <%= @recetteById.recette_ingredients[i].unite%> &emsp; <%= @recetteById.ingredients[i].nom%>
-    </li>
-  <% end %>
+    <li>Recette id: <%= @recetteById.id %></li>
+    <li>User id: <%= @recetteById.user_id %></li>
+    <li>Titre: <%= @recetteById.titre %></li>
+    <li>Étapes: <%= @recetteById.etapes %></li>
+    <li>Date de création: <%= @recetteById.created_at %></li>
+    <li>Date de la dernière modification: <%= @recetteById.updated_at %></li>
+    <li>Nombre d'ingredients: <%= @recetteById.ingredients.count %></li>
 </ul>
-<br />
-<br />
-<%= @recetteById.etapes %> 
--->
+
 
 

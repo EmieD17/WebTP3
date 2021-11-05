@@ -1,0 +1,14 @@
+{
+  "ingredients":
+  [
+    <% for i in 0..@recetteById.ingredients.length-1 %>
+      <% if i == @recetteById.ingredients.length-1%>
+        "<%= @recetteById.ingredients[i].nom.html_safe%>"
+      <% else %>
+        "<%= @recetteById.ingredients[i].nom.html_safe%>",
+      <% end %>
+    <% end %>
+  ]
+}
+
+
