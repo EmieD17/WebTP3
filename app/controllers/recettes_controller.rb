@@ -1,7 +1,7 @@
 #  Émie Doucet
 #  Web: Serveur 2
 #  Laboratoire 3
-#  03/11/2021
+#  10/11/2021
 
 class RecettesController < ApplicationController
     before_action :authenticate_user!, only: [:mes_recettes]
