@@ -10,6 +10,17 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <%= current_user.email %><br />
+      <%= link_to "Deconnection", destroy_user_session_path, method: :delete %>
+    <% else %>
+    Pas Connecté <br />
+      <a href="/users/sign_in">Connecte toi ici</a>
+    <%end%>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <br />
     <%= yield %>
   </body>
 </html>

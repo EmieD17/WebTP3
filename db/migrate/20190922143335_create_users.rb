@@ -3,7 +3,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       t.string :nom
       t.string :prenom
-      t.string :email, unique: true
 
       t.timestamps
     end
