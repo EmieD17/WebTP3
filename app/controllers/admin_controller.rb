@@ -14,6 +14,7 @@ class AdminController < ApplicationController
 
     def home_page
         get_users
+        get_all_recipes_group_by
     end
 
     
@@ -23,10 +24,12 @@ class AdminController < ApplicationController
     private
     def get_users
         @users = User.all
-        
     end
     def get_recipe_by_id
       @recetteById = Recette.find(params[:id])
+    end
+    def get_all_recipes_group_by
+      @recettes = Recette.all.group_by(&:user)
     end
 
     # Prendre note que 1 seul render peut être généré par requête
