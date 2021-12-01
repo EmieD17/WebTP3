@@ -1,0 +1,28 @@
+<!--
+#  Émie Doucet
+#  Web: Serveur 2
+#  Laboratoire 5
+#  30/11/2021
+-->
+<div>
+
+    <!-- make this a partial view for the update form -->
+
+    <!-- Chaque requête est sans mémoire, on doit lui redonner les valeurs qui ont été entré dans le html de réponse même s'il contient des erreurs -->
+    <%= form_with(model: @recette, url: "/admin/recette/update/"+@recette.id.to_s, method: "patch") do %>
+    <%= label_tag(:titre, "titre:") %>
+    <br />
+    <!-- https://guides.rubyonrails.org/form_helpers.html#helpers-for-generating-form-elements -->
+    <%= text_field_tag('recette[titre]', @recette.titre) %>
+    <br />
+
+    <%= label_tag(:etapes, "etapes:") %>
+    <br />
+    <%= text_area_tag('recette[etapes]', @recette.etapes, size: "25x5") %>
+    
+    <br />
+
+    <%= submit_tag("Modifier") %>
+    <% end %>
+
+</div>

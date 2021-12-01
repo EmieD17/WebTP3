@@ -1,9 +1,10 @@
 #  Émie Doucet
 #  Web: Serveur 2
-#  Laboratoire 3
-#  10/11/2021
+#  Laboratoire 5
+#  30/11/2021
 
 class RecettesController < ApplicationController
+    layout "application"
     before_action :authenticate_user!, only: [:mes_recettes]
 
     def home_page

@@ -1,20 +1,24 @@
 <!--
 #  Émie Doucet
 #  Web: Serveur 2
-#  Laboratoire 4
-#  10/11/2021 -->
-<h1 style="text-align: center;"> Recettes </h1>
-<br /><br /><br />
+#  Laboratoire 5
+#  30/11/2021 -->
+
+<%= link_to "Ajouter une recettes", "/admin/recette/form", class: "w3-bar-item w3-button" %>
+
 <ul>
   <% @recettes.each do |user, recettes| %>
     <li>
       <%= user.prenom %> <%= user.nom %>
         <ol>
-          <% user.recettes.each do |recettes| %>
+          <% recettes.each do |recettes| %>
+            </br>
             <li>
-              <a target=_blank href=recettes/<%= recettes.id %>><%= recettes.titre %></a>
+              <a href=recette/edit/<%= recettes.id %> style="padding:16px">Modifier   </a>
+              <a href=recettes/<%= recettes.id %>><%= recettes.titre %></a>
             </li>
           <% end %>
+          </br>
         </ol>
     </li>
   <% end %>

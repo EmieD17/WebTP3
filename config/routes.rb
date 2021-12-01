@@ -1,7 +1,7 @@
 #  Émie Doucet
 #  Web: Serveur 2
-#  Laboratoire 3
-#  03/11/2021
+#  Laboratoire 5
+#  30/11/2021
 
 Rails.application.routes.draw do
   devise_for :users
@@ -16,8 +16,13 @@ Rails.application.routes.draw do
   get '/mesrecettes/:id', to: 'recettes#mes_recettes_show'
 
   get '/admin/recettes/:id', to: 'admin#show'
-
   get '/admin/recettes', to: 'admin#home_page'
+
+  get '/admin/recette/form', to: 'admin#new'
+  post '/admin/recette/create', to: 'admin#create'
+
+  get '/admin/recette/edit/:id', to: 'admin#edit'
+  patch '/admin/recette/update/:id', to: 'admin#update'
 
 
 end
