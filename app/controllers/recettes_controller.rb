@@ -7,7 +7,7 @@ class RecettesController < ApplicationController
     layout "application"
     before_action :authenticate_user!, only: [:mes_recettes]
 
-    RECIPES_PER_PAGE = 8
+    RECIPES_PER_PAGE = 4
 
     def home_page
         @page = params.fetch(:page, 0).to_i
