@@ -5,6 +5,24 @@
 #  30/11/2021
 -->
 <div>
+Titi
+<div>
+tete
+<%test = true%>
+<%if test%>
+    test!!!
+<%end%>
+<%byebug%>
+    <% if !@recette.errors.empty? %>
+        toto
+            <% @recette.errors.messages.each do |message| %>
+                TATA
+                
+                <%=message[0].to_s%>
+            <%end%>
+    <% end %>
+</div>
+
 
     <!-- make this a partial view for the update form -->
 

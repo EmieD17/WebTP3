@@ -7,7 +7,10 @@ class RecettesController < ApplicationController
     layout "application"
     before_action :authenticate_user!, only: [:mes_recettes]
 
+    RECIPES_PER_PAGE = 8
+
     def home_page
+        @page = params.fetch(:page, 0).to_i
         get_recipes
     end
 
@@ -30,7 +33,7 @@ class RecettesController < ApplicationController
 
     private
     def get_recipes
-        @recettes = Recette.all.order(:titre)
+        @recettes = Recette.offset(@page * RECIPES_PER_PAGE).limit(RECIPES_PER_PAGE).order(:titre)
     end
 
     def get_recipe_by_id
